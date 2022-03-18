@@ -1,0 +1,12 @@
+Ejemplo de uso de Socket.io + Node.js + Xampp
+
+Index en server Xampp en  mi PC (Frontend)
+Socket.io en server Node.js en mi PC (Backend o PHP)
+
+(Frontend-xampp)
+https://gustavomicolini.github.io
+
+(Backend-node)
+https://gussocketio-backend.herokuapp.com/
+
+
