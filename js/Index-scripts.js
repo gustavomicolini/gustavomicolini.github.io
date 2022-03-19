@@ -32,7 +32,7 @@ function pidoDato() {
 
 //Inicio conexion al servidor mediante socket.io
 //var socket = io(); //cuando cliente en el mismo Node.js
-var socket = io('https://gusocketio-backend.herokuapp.com'); //cliente en otro servidor
+var socket = io('https://gussocketio-backend2.herokuapp.com'); //cliente en otro servidor
 
 socket.on('connect',function(){
     console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io') 
