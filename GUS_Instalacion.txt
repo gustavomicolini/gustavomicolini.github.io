@@ -29,11 +29,15 @@ https://gustavomicolini.github.io
 Copiar la carpeta "socket.io-client" en donde estan
 cliente.php (mis archivos)
 
-3)borra lo que hay en repositorio "gustavomicolini.github.io"
+3)Cambiar nombre cliente.php a index.html
 
-4)copiar estos archivos en repositorio "gustavomicolini.github.io"
+4)cambiar en io() con 'https://gusphpsocketio-b.herokuapp.com'
 
-5)cambiar en io() con 'https://gusphpsocketio-b.herokuapp.com'
+5)borra lo que hay en repositorio "gustavomicolini.github.io"
+
+6)copiar estos archivos en repositorio "gustavomicolini.github.io"
+
+
 
 
 Pruebas:
