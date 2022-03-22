@@ -11,19 +11,19 @@ esto instala una carpeta vendor y 2 archivos
 ------------------------------------------
 1)Luego en comandos de windows me posiciono en la carpeta
 
-2)C:\Xampp\htdocs\GusPHPsocketio-B>composer require workerman/phpsocket.io
+2)C:\GitHub\GusPHPsocketio-B>composer require workerman/phpsocket.io
 
-3)C:\Xampp\htdocs\GusPHPsocketio-B Grabar aqui el archivo server.php
+3)C:\GitHub\GusPHPsocketio-B y Grabar aqui el archivo server.php
 
-4)C:\Xampp\htdocs\GusPHPsocketio-B>php server.php start
+4)crear repositorio github y copiar estos archivos
 
-5)crear repositorio github y copiar estos archivos
-
+5)crear un archivo en C:\GitHub\GusPHPsocketio-B
+"Procfile" con web: php server.php start
 
 Frontend:GusPHPsocketio-F (GitHub)
 https://gustavomicolini.github.io
 ------------------------------------------
-1)C:\Xampp\htdocs\GusPHPsocketio-F Grabar aqui el archivo cliente.php
+1)C:\GitHub\GusPHPsocketio-F Grabar aqui el archivo cliente.php
 
 2)de: https://github.com/walkor/phpsocket.io
 Copiar la carpeta "socket.io-client" en donde estan
