@@ -1,0 +1,41 @@
+GusPHP - phpsocket.io
+
+Ejemplo comunicacion entre PHP y Socket.io con phpsocket.io
+
+Backend:GusPHPsocketio-B (Heroku/Ricon)
+https://gusphpsocketio-b.herokuapp.com
+------------------------------------------
+(Primero Instalar "Composer" para windows)
+esto instala una carpeta vendor y 2 archivos 
+	composer.json y composer.lock
+------------------------------------------
+1)Luego en comandos de windows me posiciono en la carpeta
+
+2)C:\Xampp\htdocs\GusPHPsocketio-B>composer require workerman/phpsocket.io
+
+3)C:\Xampp\htdocs\GusPHPsocketio-B Grabar aqui el archivo server.php
+
+4)C:\Xampp\htdocs\GusPHPsocketio-B>php server.php start
+
+5)crear repositorio github y copiar estos archivos
+
+
+Frontend:GusPHPsocketio-F (GitHub)
+https://gustavomicolini.github.io
+------------------------------------------
+1)C:\Xampp\htdocs\GusPHPsocketio-F Grabar aqui el archivo cliente.php
+
+2)de: https://github.com/walkor/phpsocket.io
+Copiar la carpeta "socket.io-client" en donde estan
+cliente.php (mis archivos)
+
+3)borra lo que hay en repositorio "gustavomicolini.github.io"
+
+4)copiar estos archivos en repositorio "gustavomicolini.github.io"
+
+5)cambiar en io() con 'https://gusphpsocketio-b.herokuapp.com'
+
+
+Pruebas:
+--------------------------------
+https://gustavomicolini.github.io
