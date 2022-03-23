@@ -22,8 +22,8 @@
     <script src="socket.io-client/socket.io.js"></script>  
     <script>
             //var socket = io.connect("ws://127.0.0.1:2021");
-			var socket = io.connect('https://gusphpsocketio-b.herokuapp.com:2021');
-			//var socket = io.connect('http://camdepto.publicvm.com/gusphpsocketio-b/');
+			var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': true });
+			//var socket = io.connect('https://gusphpsocketio-b.herokuapp.com:2021');
 
             $('.message').on('change', function(){
                 socket.emit('send message', $(this).val()); //mando al backend
