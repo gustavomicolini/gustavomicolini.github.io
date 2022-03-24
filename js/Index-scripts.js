@@ -32,12 +32,12 @@ function pidoDato() {
 //var socket = io('https://gussocketio-backend2.herokuapp.com'); //cliente en otro servidor
 var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': true });
 
-socket.on('connect',function(){
+socket.on('connection',function(){
     console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io') 
 	document.getElementById("demo3").innerHTML = 'Nuevo clienteWEB, frontend pide CONECTARSE al socket.io';
 });
 
-socket.on('disconnect',function(){
+socket.on('disconnection',function(){
     console.log('clienteWEB, frontend pide DES-CONECTARSE del socket.io') 
 	document.getElementById("demo3").innerHTML = 'clienteWEB, frontend pide DES-CONECTARSE del socket.io';
 });
