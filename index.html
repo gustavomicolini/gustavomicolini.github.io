@@ -1,25 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Chat</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-    </head>
-    <body>
-		<h2>Uso Experimental de phpSocket.io para PHP</h2>
-    	<h3>FRONTEND: server GitHub https://gustavomicolini.github.io</h3>
-		<h3>BACKEND: server Heroku https://gusphpsocketio-b.herokuapp.com/</h3>
-		<h3>Cuando escribe, manda al backend, y este responde (con socket.io)</h3>
-        <div id="chat-messages" style="overflow-y: scroll; height: 100px; "></div>        
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GusMonitor</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/home_20.css">-->
+	
+	
+	    
+	
+</head>
+
+<body>
+	<h3>GusMonitor</h3>
+	<h1>Uso Experimental de phpSocket.io</h1>
+    <h1>FRONTEND: server GitHub https://gustavomicolini.github.io</h1>
+	<h1>BACKEND: server Heroku con PHP+phpsocket.io https://gusphpsocketio-b.herokuapp.com/</h1>
+	
+	<div id="chat-messages" style="overflow-y: scroll; height: 100px; "></div>        
         <input type="text" class="message">
+	<br>
+	<br>
+			<div style="float:left;margin-top:2px;">
 				<div>
+					<span class="tit_1">Cliente:</span>
+					<span class="btprice_2" id="demo3">sin dato</span>
 					<br>
-					<span>BITSTAMP(USD):</span>
-					<span id="bitstamp">0</span>
+					<span class="tit_1">Frontend:</span>
+					<span class="btprice_2" id="demo4">sin dato</span>
+					<br>
+					<span class="tit_1">Backend:</span>
+					<span class="btprice_2" id="demo5">sin dato</span>
 				</div>
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
-    <script src="socket.io-client/socket.io.js"></script> 
-	<script src="js/Index-socket.js"></script>
-    
+			</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<h3>BASE DE DATOS EN BACKEND</h3>
+	<p id="demo">Click the button para pedir al BACKEND valor de bitstamp.</p>
+	<button onclick="cargoDato()">Actualizar</button>
+	<p id="demo2">Click the button para reiniciar valor a cero.</p>
+	<button onclick="reiniDato()">Reiniciar</button>
+	
+	<br>
+	<br>
+	
+			<div style="float:left;margin-top:2px;">
+				<div>
+					<span class="tit_1">I_Inversor(Amp):</span>
+					<span class="btprice_2" id="IInv">0</span>
+					<br>
+					<span class="tit_1">I_Bateria(Amp):</span>
+					<span class="btprice_2" id="IBat">0</span>
+					<br>
+					<span class="tit_1">V_Bateria(Amp):</span>
+					<span class="btprice_2" id="VBat">0</span>
+					<br>
+					<span class="tit_1">Temperatura(°c):</span>
+					<span class="btprice_2" id="Temp">0</span>
+					<br>
+					<span class="tit_1">Valor aleatorio que envia periodicamente Backend:</span>
+					<span class="btprice_2" id="bitstamp">0</span>
+				</div>
+			</div>
+	
+</body>
+	<!--<script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--<script src="socket.io/socket.io.js"></script>-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>-->
+	<script src="socket.io-client/socket.io.js"></script>
+	<script src="js/Index-scripts.js"></script>
 </html>
