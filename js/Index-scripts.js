@@ -16,7 +16,7 @@ function pidoDato() {
 	//emit = cliente envia informacion solo al servidor, otro cliente no lo recibe
 	socket.emit('send message',textoenvio , function(respuesta) { //respuesta del callback	
 		//Imprimo texto enviado
-		console.log('usuario, ', textoenvio);
+		console.log('usuario: ', textoenvio);
 		document.getElementById("demo4").innerHTML = textoenvio;
 		//Imprimo respuesta
 		console.log('ServerIO:', respuesta);
@@ -31,6 +31,20 @@ function pidoDato() {
 //var socket = io(); //cuando cliente en el mismo Node.js
 //var socket = io('https://gussocketio-backend2.herokuapp.com'); //cliente en otro servidor
 var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': true });
+
+
+
+			$('.message').on('change', function(){
+                socket.emit('send message', $(this).val()); //mando al backend
+                $(this).val('');
+            });
+
+            socket.on('new message', function(data){ //recibo del backend
+                $('#chat-messages').append('<p>' + data +'</p>');
+            });
+
+
+
 
 socket.on('connection',function(){
     console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io') 
