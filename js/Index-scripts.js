@@ -13,7 +13,7 @@ function reiniDato() {
 	document.getElementById("demo5").innerHTML = 'sin dato';
 }
 function pidoDato() {
-	let textoenvio = 'Hola ServerPHPsocketIO, mandame dato'
+	let textoenvio = 'Hola ServerPHPsocketIO, mandame dato';
 	
 	//emit = cliente envia informacion solo al servidor, otro cliente no lo recibe
 	socket.emit('send message',textoenvio , function(respuesta) { //respuesta del callback
@@ -48,12 +48,14 @@ socket.on('new message', function(data){ //recibo del backend
 
 
 socket.on('connection',function(){
-    console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io') 
+	let textoenvio = 'Hola ServerPHPsocketIO, Conectado?';
+    socket.emit('send message', textoenvio);
+	console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io'); 
 	document.getElementById("demo3").innerHTML = 'Nuevo clienteWEB, frontend pide CONECTARSE al socket.io';
 });
 
 socket.on('disconnect',function(){
-    console.log('clienteWEB, frontend pide DES-CONECTARSE del socket.io') 
+    console.log('clienteWEB, frontend pide DES-CONECTARSE del socket.io'); 
 	document.getElementById("demo3").innerHTML = 'clienteWEB, frontend pide DES-CONECTARSE del socket.io';
 });
 
@@ -68,7 +70,7 @@ socket.on('enviarMensaje',function(mensaje){
 
 //recibiendo un numero random cada dos segundos
 socket.on('server/random', function(num){
-    //console.log(num)
+    //console.log(num);
 	document.getElementById("bitstamp").innerHTML = num;
 })
 //enviando un numero random cada dos segundos
