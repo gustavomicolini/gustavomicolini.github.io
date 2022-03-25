@@ -41,6 +41,7 @@ $('.message').on('change', function(){
 
 socket.on('new message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
+	document.getElementById("demo5").innerHTML = respuesta;
 });
 //----------------------------------------------------------------
 
