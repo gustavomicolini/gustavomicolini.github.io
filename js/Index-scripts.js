@@ -18,10 +18,8 @@ $('.message').on('change', function(){ //Input texto
 
 socket.on('new message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
-	document.getElementById("demo5").innerHTML = data;
 });
 //----------------------------------------------------------------
-
 
 
 //escuchar al servidorIO
@@ -29,16 +27,17 @@ socket.on('enviarMensaje',function(mensaje){
 	//Imprimo respuesta
     console.log('ServerIO:', mensaje);
 	const myJSON = JSON.stringify(mensaje);
-	document.getElementById("demo5").innerHTML = myJSON;
+	//document.getElementById("demo5").innerHTML = myJSON;
 });	
 
 
 //recibiendo un numero random cada dos segundos
-socket.on('server/random', function(num){
+//socket.emit('send message', function(num){
     //console.log(num);
-	document.getElementById("bitstamp").innerHTML = num;
-})
+	//document.getElementById("bitstamp").innerHTML = num;
+//})
+
 //enviando un numero random cada dos segundos
-//setInterval(function(){
-//    socket.emit('client/random', Math.random())
-//}, 2000)
+setInterval(function(){
+    socket.emit('send message', Math.random())
+}, 5000)
