@@ -34,6 +34,12 @@ function pidoDato() {
 var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': true });
 
 //----------------------------------------------------------------
+/*$ io es el objeto SocketIO. $ socket es la conexión del cliente
+ $ datos pueden ser números y cadenas, o una matriz. Cuando $ data es una matriz, el cliente la convertirá automáticamente en un objeto javascript.
+ De la misma manera, si el cliente envía un objeto javascript a un evento emitido por el servidor, se convertirá automáticamente a una matriz php cuando el servidor lo reciba.*/
+
+socket.emit('send message', 'Hola ServerPHPsocketIO, mandame dato'); //mando al backend al inicio
+
 $('.message').on('change', function(){
 	socket.emit('send message', $(this).val()); //mando al backend
 	$(this).val('');
@@ -46,18 +52,6 @@ socket.on('new message', function(data){ //recibo del backend
 //----------------------------------------------------------------
 
 
-
-socket.on('connection',function(){
-	let textoenvio = 'Hola ServerPHPsocketIO, Conectado?';
-    socket.emit('send message', textoenvio);
-	console.log('Nuevo clienteWEB, frontend pide CONECTARSE al socket.io'); 
-	document.getElementById("demo3").innerHTML = 'Nuevo clienteWEB, frontend pide CONECTARSE al socket.io';
-});
-
-socket.on('disconnect',function(){
-    console.log('clienteWEB, frontend pide DES-CONECTARSE del socket.io'); 
-	document.getElementById("demo3").innerHTML = 'clienteWEB, frontend pide DES-CONECTARSE del socket.io';
-});
 
 //escuchar al servidorIO
 socket.on('enviarMensaje',function(mensaje){
