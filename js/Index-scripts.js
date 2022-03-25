@@ -9,11 +9,12 @@ var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': 
  $ datos pueden ser números y cadenas, o una matriz. Cuando $ data es una matriz, el cliente la convertirá automáticamente en un objeto javascript.
  De la misma manera, si el cliente envía un objeto javascript a un evento emitido por el servidor, se convertirá automáticamente a una matriz php cuando el servidor lo reciba.*/
 //----------------------------------------------------------------
-socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
+/*socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
 
 socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
 });
+*/
 //---------------------------------------------------------------
 //enviando un numero random cada 5 segundos
 setInterval(function(){
@@ -27,16 +28,13 @@ socket.on('resp num', function(data){ //recibo del backend
 $('.message').on('change', function(){ //Input texto
 	socket.emit('send message', $(this).val()); //mando al backend
 	$(this).val('');
+	socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend
 });
 socket.on('resp message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
 });
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-$('.message').on('change', function(){ //Input texto
-	socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend
-});
-
 socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
 });
