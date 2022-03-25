@@ -1,34 +1,5 @@
 //PHPsocket.io en server Heroku
 
-//Funciones para los click de botones
-function cargoDato() {
-	pidoDato();
-	document.getElementById("demo").innerHTML = "Valor bitstamp actualizado!!!!";
-	document.getElementById("bitstamp").innerHTML = "Valor=xxxx!!!!";
-}
-function reiniDato() {
-	document.getElementById("demo").innerHTML = "Click the button para actualizar valor de bitstamp.";
-	document.getElementById("bitstamp").innerHTML = "0";
-	document.getElementById("demo4").innerHTML = 'sin datos';
-	document.getElementById("demo5").innerHTML = 'sin dato';
-}
-function pidoDato() {
-	let textoenvio = 'Hola ServerPHPsocketIO, mandame dato';
-	
-	//emit = cliente envia informacion solo al servidor, otro cliente no lo recibe
-	socket.emit('send message',textoenvio , function(respuesta) { //respuesta del callback
-		//Imprimo texto enviado
-		console.log('usuario: ',textoenvio);
-		document.getElementById("demo4").innerHTML = textoenvio;
-		//Imprimo respuesta
-		console.log('ServerPHPIO:', respuesta);
-		//const myJSON = JSON.stringify(respuesta);
-		document.getElementById("demo5").innerHTML = respuesta;
-	});
-}
-
-
-
 //Inicio conexion al servidor mediante socket.io
 //var socket = io(); //cuando cliente en el mismo Node.js
 var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': true });
@@ -38,9 +9,9 @@ var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': 
  $ datos pueden ser números y cadenas, o una matriz. Cuando $ data es una matriz, el cliente la convertirá automáticamente en un objeto javascript.
  De la misma manera, si el cliente envía un objeto javascript a un evento emitido por el servidor, se convertirá automáticamente a una matriz php cuando el servidor lo reciba.*/
 
-socket.emit('send message', 'Hola ServerPHPsocketIO, mandame dato'); //mando al backend al inicio
+socket.emit('send message', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
 
-$('.message').on('change', function(){
+$('.message').on('change', function(){ //Input texto
 	socket.emit('send message', $(this).val()); //mando al backend
 	$(this).val('');
 });
