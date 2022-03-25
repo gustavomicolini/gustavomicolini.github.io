@@ -32,7 +32,13 @@ socket.on('resp message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
 });
 //----------------------------------------------------------------
+//----------------------------------------------------------------
+socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
 
+socket.on('resp connect', function(data){ //recibo del backend
+	document.getElementById("estado").innerHTML = data;
+});
+//---------------------------------------------------------------
 
 
 //recibiendo un numero random cada dos segundos
