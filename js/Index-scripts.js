@@ -33,7 +33,9 @@ socket.on('resp message', function(data){ //recibo del backend
 });
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
+$('.message').on('change', function(){ //Input texto
+	socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend
+});
 
 socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
