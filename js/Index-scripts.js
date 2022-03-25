@@ -28,24 +28,19 @@ socket.on('resp num', function(data){ //recibo del backend
 $('.message').on('change', function(){ //Input texto
 	socket.emit('send message', $(this).val()); //mando al backend
 	$(this).val('');
-	socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend
 });
 socket.on('resp message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
 });
 //----------------------------------------------------------------
-//----------------------------------------------------------------
-socket.on('resp connect', function(data){ //recibo del backend
-	document.getElementById("estado").innerHTML = data;
-});
-//---------------------------------------------------------------
 
 
+/*
 //recibiendo un numero random cada dos segundos
-//socket.emit('send message', function(num){
-    //console.log(num);
-	//document.getElementById("bitstamp").innerHTML = num;
-//})
+socket.emit('send message', function(num){
+    console.log(num);
+	document.getElementById("bitstamp").innerHTML = num;
+})
 
 //escuchar al servidorIO
 socket.on('enviarMensaje',function(mensaje){
@@ -54,5 +49,6 @@ socket.on('enviarMensaje',function(mensaje){
 	const myJSON = JSON.stringify(mensaje);
 	//document.getElementById("demo5").innerHTML = myJSON;
 });	
+*/
 
 
