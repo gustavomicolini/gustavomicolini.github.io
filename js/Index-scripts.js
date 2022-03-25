@@ -8,19 +8,37 @@ var socket = io.connect('https://gusphpsocketio-b.herokuapp.com', { 'forceNew': 
 /*$ io es el objeto SocketIO. $ socket es la conexión del cliente
  $ datos pueden ser números y cadenas, o una matriz. Cuando $ data es una matriz, el cliente la convertirá automáticamente en un objeto javascript.
  De la misma manera, si el cliente envía un objeto javascript a un evento emitido por el servidor, se convertirá automáticamente a una matriz php cuando el servidor lo reciba.*/
+//---------------------------------------------------------------
+socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
 
-socket.emit('send message', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
-
+socket.on('resp connect', function(data){ //recibo del backend
+	document.getElementById("estado").innerHTML = data;
+});
+//---------------------------------------------------------------
 $('.message').on('change', function(){ //Input texto
 	socket.emit('send message', $(this).val()); //mando al backend
 	$(this).val('');
 });
-
-socket.on('new message', function(data){ //recibo del backend
+socket.on('resp message', function(data){ //recibo del backend
 	$('#chat-messages').append('<p>' + data +'</p>');
 });
 //----------------------------------------------------------------
+//enviando un numero random cada 5 segundos
+setInterval(function(){
+    socket.emit('send num', Math.random())
+}, 5000)
 
+socket.on('resp num', function(data){ //recibo del backend
+	document.getElementById("numero").innerHTML = data;
+});
+//----------------------------------------------------------------
+
+
+//recibiendo un numero random cada dos segundos
+//socket.emit('send message', function(num){
+    //console.log(num);
+	//document.getElementById("bitstamp").innerHTML = num;
+//})
 
 //escuchar al servidorIO
 socket.on('enviarMensaje',function(mensaje){
@@ -31,13 +49,3 @@ socket.on('enviarMensaje',function(mensaje){
 });	
 
 
-//recibiendo un numero random cada dos segundos
-//socket.emit('send message', function(num){
-    //console.log(num);
-	//document.getElementById("bitstamp").innerHTML = num;
-//})
-
-//enviando un numero random cada dos segundos
-setInterval(function(){
-    socket.emit('send message', Math.random())
-}, 5000)
