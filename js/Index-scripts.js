@@ -20,7 +20,6 @@ socket.on('resp connect', function(data){ //recibo del backend
 $(document).ready(function(){
 socket.emit('send connect', 'Cliente conectado al socket.io'); //mando al backend al inicio
 });
-
 socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
 });
@@ -29,7 +28,6 @@ socket.on('resp connect', function(data){ //recibo del backend
 setInterval(function(){
     socket.emit('send num', Math.random())
 }, 5000)
-
 socket.on('resp num', function(data){ //recibo del backend
 	document.getElementById("numero").innerHTML = data;
 });
