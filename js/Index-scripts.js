@@ -18,10 +18,10 @@ socket.on('resp connect', function(data){ //recibo del backend
 
 //---------------------------------------------------------------
 $(document).ready(function(){
-socket.emit('send num', 'Cliente conectado al socket.io'); //mando al backend al inicio
+socket.emit('send connect', 'Cliente conectado al socket.io'); //mando al backend al inicio
 });
 
-socket.on('resp num', function(data){ //recibo del backend
+socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
 });
 //---------------------------------------------------------------
