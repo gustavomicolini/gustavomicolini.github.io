@@ -2,8 +2,8 @@
 
 //Inicio conexion al servidor mediante socket.io
 //var socket = io(); //cuando cliente en el mismo Node.js
-//var socket = io.connect('https://gusmonitor-back.herokuapp.com', { 'forceNew': true });
-var socket = io.connect('http://camdepto.publicvm.com/gusmonitor-Back', { 'forceNew': true });
+var socket = io.connect('https://gusmonitor-back.herokuapp.com', { 'forceNew': true });
+//var socket = io.connect('http://camdepto.publicvm.com/gusmonitor-Back', { 'forceNew': true });
 
 //----------------------------------------------------------------
 /*$ io es el objeto SocketIO. $ socket es la conexión del cliente
