@@ -15,21 +15,23 @@ socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("estado").innerHTML = data;
 });
 */
+
 //---------------------------------------------------------------
 $(document).ready(function(){
-socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
+//socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
+	document.getElementById("estado").innerHTML = "ok";
 });
 
-socket.on('resp connect', function(data){ //recibo del backend
-	document.getElementById("estado").innerHTML = data;
-});
+//socket.on('resp connect', function(data){ //recibo del backend
+//	document.getElementById("estado").innerHTML = data;
+//});
 //---------------------------------------------------------------
 //enviando un numero random cada 5 segundos
 setInterval(function(){
-    socket.emit('send num', Math.random())
+    socket.emit('connect', Math.random())
 }, 5000)
 
-socket.on('resp num', function(data){ //recibo del backend
+socket.on('resp connect', function(data){ //recibo del backend
 	document.getElementById("numero").innerHTML = data;
 });
 //---------------------------------------------------------------
