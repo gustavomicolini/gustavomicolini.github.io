@@ -16,6 +16,14 @@ socket.on('resp connect', function(data){ //recibo del backend
 });
 */
 //---------------------------------------------------------------
+$(document).ready(function(){
+socket.emit('connect', 'ServerPHP: Cliente conectado al socket.io'); //mando al backend al inicio
+});
+
+socket.on('resp connect', function(data){ //recibo del backend
+	document.getElementById("estado").innerHTML = data;
+});
+//---------------------------------------------------------------
 //enviando un numero random cada 5 segundos
 setInterval(function(){
     socket.emit('send num', Math.random())
