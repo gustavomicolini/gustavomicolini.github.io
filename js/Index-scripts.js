@@ -2,7 +2,9 @@
 
 //Inicio conexion al servidor mediante socket.io
 //var socket = io(); //cuando cliente en el mismo Node.js
-var socket = io.connect('https://gusmonitor-back.herokuapp.com', { 'forceNew': true });
+
+var socket = io.connect('http://gusmonitor-env.eba-zdi2bdvs.us-east-1.elasticbeanstalk.com/', { 'forceNew': true });
+//var socket = io.connect('https://gusmonitor-back.herokuapp.com', { 'forceNew': true });
 //var socket = io.connect('http://camdepto.publicvm.com/gusmonitor-Back', { 'forceNew': true });
 
 //----------------------------------------------------------------
