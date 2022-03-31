@@ -25,6 +25,7 @@ $(function() {
 
   //var socket = io('http://'+document.domain+':2020');
   var socket = io.connect('https://gusmonitor-dell.herokuapp.com', { 'forceNew': true });
+  //var socket = io('https://gusmonitor-dell.herokuapp.com/');//gus
 
   const addParticipantsMessage = (data) => {
     var message = '';
