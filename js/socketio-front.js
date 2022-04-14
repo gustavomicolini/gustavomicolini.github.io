@@ -6,7 +6,7 @@
 //Inicio conexion al servidor mediante socket.io
 //var socket = io(); //cuando cliente en el mismo Node.js
 //var socket = io('192.168.100.152:3000'); //En xampp
-var socket = io('https://gusmonitor-back.herokuapp.com'); //En GitHub
+var socket = io('https://gusmonitor-backend.herokuapp.com'); //En GitHub
 
 
 //en conectar
