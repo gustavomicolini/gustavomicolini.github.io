@@ -10,7 +10,9 @@ C:\xampp\htdocs\GusMonitor-GitHub-NodeHeroku\backend-Heroku
 
 Node.js + express + socket.io + API + mysql
 -------------------------------------------
-
+a) En package.json agregar en "scripts": {
+"start":"nodemon app.js",
+b) Crear un Procfile con web: nodemon app.js
 
 ==========================================================
 2)(Frontend-xampp)
