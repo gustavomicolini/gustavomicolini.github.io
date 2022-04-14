@@ -1,0 +1,75 @@
+GusMonitor - Prueba Socket.io+API+mysql
+
+1)Server Node.js en mi PC (Backend o PHP)
+2)Index en Server Xampp en  mi PC (Frontend)
+
+===============================================================
+1)(Backend-node)
+http://localhost:3000
+C:\xampp\htdocs\GusMonitor-GitHub-NodeHeroku\backend-Heroku
+
+Node.js + express + socket.io + API + mysql
+-------------------------------------------
+
+
+==========================================================
+2)(Frontend-xampp)
+"https://gustavomicolini.github.io"
+C:\xampp\htdocs\GusMonitor-GitHub-NodeHeroku\frontend-GitHub
+
+Funcionamiento:
+---------------
+En explorador:
+"https://gustavomicolini.github.io"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									MARIA MERCEDES SOS UNA GILA  !!!!!!!!
+									Y HORACIO TAMBIEN
+									MAMA ES UNA GENIA
+									TENEMOS QUE SEGUIR COMIENDO
+
+
+
+
+
+
+
+
+
+
+
+
+
