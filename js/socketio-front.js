@@ -21,7 +21,7 @@ socket.on('ioInicio',function(mensaje){
     //const myJSON = JSON.stringify(mensaje); //for converting an object into a JSON string
 	//-----------------------------------------------------------------------------------
 	//Ya viene en formato JSON entonces no convierto nada
-    document.getElementById("estado").innerHTML = ": Conectado. "+mensaje.mensaje;
+    document.getElementById("estado").innerHTML = "Conectado. "+mensaje.mensaje;
 
 });	
 //en deconectar
