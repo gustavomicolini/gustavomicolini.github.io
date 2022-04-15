@@ -16,9 +16,13 @@ socket.on('connect',function(){
 //escuchando solo en conectar
 socket.on('ioInicio',function(mensaje){
     console.log('respuesta Backend:', mensaje);
-    //const obj = JSON.parse(text);
-    const myJSON = JSON.stringify(mensaje);
-    document.getElementById("estado").innerHTML = myJSON;
+	//-----------------------------------------------------------------------------------
+    //const inobj = JSON.parse(mensaje); //for converting JSON strings into JavaScript objects
+    //const myJSON = JSON.stringify(mensaje); //for converting an object into a JSON string
+	//-----------------------------------------------------------------------------------
+	//Ya viene en formato JSON entonces no convierto nada
+    document.getElementById("estado").innerHTML = mensaje.usuario+": Conectado. "+mensaje.mensaje;
+
 });	
 //en deconectar
 socket.on('disconnect',function(){
@@ -45,27 +49,27 @@ socket.on('ioNum', function(num){
 
 
 //recibiendo de API cada x segundos
-socket.on('ioTraider', function(dato){
-	document.getElementById("traider").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("trader").innerHTML = dato.trader1;
 });
-socket.on('ioCompra', function(dato){
-	document.getElementById("compra").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("compra").innerHTML = dato.compra1;
 });
-socket.on('ioVenta', function(dato){
-	document.getElementById("venta").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("venta").innerHTML = dato.venta1;
 });
-socket.on('ioTime', function(dato){
-	document.getElementById("time").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("time").innerHTML = dato.time1;
 });
 
 
 //recibiendo de API cada x segundos
-socket.on('ioCompra2', function(dato){
-	document.getElementById("compra2").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("compra2").innerHTML = dato.compra2;
 });
-socket.on('ioVenta2', function(dato){
-	document.getElementById("venta2").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("venta2").innerHTML = dato.venta2;
 });
-socket.on('ioTime2', function(dato){
-	document.getElementById("time2").innerHTML = dato;
+socket.on('ioData', function(dato){
+	document.getElementById("time2").innerHTML = dato.time2;
 });
