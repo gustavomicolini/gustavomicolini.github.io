@@ -1,77 +1,48 @@
 GusMonitor - Prueba Socket.io+API+mysql
 
-1)Server Node.js en mi PC (Backend o PHP)
-2)Index en Server Xampp en  mi PC (Frontend)
+1)Server app.js en HEROKU (Node.js backend)
+2)Server index.html en GITHUB (frontend)
 
 ===============================================================
 1)(Backend-node)
 http://localhost:3000
-C:\xampp\htdocs\GusMonitor-GitHub-NodeHeroku\backend-Heroku
-
+C:\xampp\htdocs\GusMonitor1.1-Node-Heroku/gusmonitor-backend
 Node.js + express + socket.io + API + mysql
 -------------------------------------------
-a) En package.json agregar en "scripts": {
-"start":"nodemon app.js",
-b) Crear un Procfile con web: nodemon app.js
+C:/>npm init -y
+C:/>npm i express
+C:/>npm i socket.io
+C:/>npm i mysql
+
+C:/>npm i node-fetch@2.6.6 (las siguientes no sirven)
+
+............................................................
+Si creo una API:
+C:/>npm i dotenv
+C:/>npm i body-parser
+C:/>npm i cors (Cross Origin Resource Sharing)
+...........................................................
+
+C:/>npm i nodemon
+
+C:/>nodemon app.js
+Gus: Servidor NODE corriendo en puerto 3000
 
 ==========================================================
-2)(Frontend-xampp)
-"https://gustavomicolini.github.io"
-C:\xampp\htdocs\GusMonitor-GitHub-NodeHeroku\frontend-GitHub
+2)(Frontend-Github)
+C:\xampp\htdocs/GusMonitor1.1-Node-Heroku/gustavomicolini.github.io/
 
 Funcionamiento:
 ---------------
+Activar Xampp + mysql
 En explorador:
-"https://gustavomicolini.github.io"
+https://gustavomicolini.github.io/index.html
 
 
+Para leer la API publica (que ofrece GusMonitor):
+-------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-									MARIA MERCEDES SOS UNA GILA  !!!!!!!!
-									Y HORACIO TAMBIEN
-									MAMA ES UNA GENIA
-									TENEMOS QUE SEGUIR COMIENDO
-
-
-
-
-
-
-
-
-
-
-
-
+http:Heroku y mostrara
+[{"Id":1,"Traider":"argenbtc","Compra":7697357.69,"Venta":7510226.55,"Timestamp":1650245428},
+{"Id":2,"Traider":"argenbtc","Compra":7696699.22,"Venta":7509981.45,"Timestamp":1650245368}]
 
