@@ -34,16 +34,23 @@ Gus: Servidor NODE corriendo en puerto 3000
 2)(Frontend-Github)
 C:\xampp\htdocs/GusMonitor1.1-Node-Heroku/gustavomicolini.github.io/
 
+
+==========================================================
 Funcionamiento:
 ---------------
+1°)
 Activar Xampp + mysql
 En explorador:
 https://gustavomicolini.github.io/index.html
 
+2°)
+En explorador:
+https://gusmonitor-backend.herokuapp.com
+respuesta: Servidor Express en http://localhost:3000
 
+3°)
 Para leer la API publica (que ofrece GusMonitor):
 -------------------------------------------------
-
 https://gusmonitor-backend.herokuapp.com/api/datos
 
 [{"Id":1,"Traider":"argenbtc","Compra":7697357.69,"Venta":7510226.55,"Timestamp":1650245428},
