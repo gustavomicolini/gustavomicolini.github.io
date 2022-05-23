@@ -1,7 +1,9 @@
 GusMonitor - Prueba Socket.io+API+mysql
 
 1)Server app.js en HEROKU (Node.js backend)
+	Lo subo mediante Visual Stududio Code
 2)Server index.html en GITHUB (frontend)
+	Lo subo mediante GitHub Descktop
 
 ===============================================================
 1)(Backend-node)
@@ -42,7 +44,8 @@ https://gustavomicolini.github.io/index.html
 Para leer la API publica (que ofrece GusMonitor):
 -------------------------------------------------
 
-http:Heroku y mostrara
+https://gusmonitor-backend.herokuapp.com/api/datos
+
 [{"Id":1,"Traider":"argenbtc","Compra":7697357.69,"Venta":7510226.55,"Timestamp":1650245428},
 {"Id":2,"Traider":"argenbtc","Compra":7696699.22,"Venta":7509981.45,"Timestamp":1650245368}]
 
